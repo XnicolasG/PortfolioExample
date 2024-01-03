@@ -1,0 +1,28 @@
+---
+import ExperienceItem from './ExperienceItem.astro'
+const EXPERIENCE = [
+    {
+        Date: 'Marzo 2023 - Abril 2023',
+        Title: 'Desarrollador Jr',
+        Description:`Creación de Flujos BIM basado en requerimientos personalizados. Personalizaciones generadas con caracteristicas propias del entorno, junto con JavaScript y SQL.
+Uso de React (JS, TS) para apoyo en código de productos.
+Uso de Blazor para desarrollo de producto.`
+    },
+    {
+        Date: 'Marzo 2021 - Septiembre 2021',
+        Title: 'Analista de costos',
+        Description: 'Uso de herramientas como Excel para la creación de una base de datos optima, control de precios y costos. Como también uso de Power BI para tratamiento y análisis de datos para toma de decisiones'
+    }
+]
+---
+<ol class="relative border-s border-gray-200 dark:border-gray-700"> 
+    {
+        EXPERIENCE.map(it =>(
+            <li class="mb-10 ms-4">
+                <ExperienceItem {...it} />
+            </li>
+        ))
+    }                 
+    
+</ol>
+

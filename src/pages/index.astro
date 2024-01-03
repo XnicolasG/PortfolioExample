@@ -4,9 +4,12 @@ import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import profilePh from "../img/PhotoLknd.jpg";
 import SocialButton from '../components/SocialButton.astro'
+import SectionContainer from '../components/SectionContainer.astro'
 import LinkedIn from '../components/icons/LinkedIn.astro'
 import Github from '../components/icons/Github.astro'
 import Mail from '../components/icons/Mail.astro'
+import Experience from "../components/Experience.astro";
+import Briefcase from '../components/icons/Briefcase.astro'
 ---
 
 <Layout 
@@ -14,8 +17,8 @@ title="Porfolio Nicolas - desarrollador y programador web front-end"
 description="Abierto a contratación para desarrollo web con uso de React y/o Astro"
 >
 	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<Image class="rounded-2xl w-16 h-18 mb-6 hover:scale-125 transition" src={profilePh} alt="Photo"/> 
+		<SectionContainer class="py-44 pb-24">
+			<Image class="rounded-2xl w-16 h-18 mb-6 hover:scale-125 transition" title="Hello World!" src={profilePh} alt="Photo"/> 
 			<h1
 				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-8"
 			>
@@ -45,6 +48,14 @@ description="Abierto a contratación para desarrollo web con uso de React y/o As
 					<Mail  class="size-6"/> nicolasg.ngl@gmail.com
 				</SocialButton>
 			</nav>
-		</section>
+		</SectionContainer>
+
+		<SectionContainer id="experience">
+			<h2 class="flex items-center gap-x-2 text-2xl font-semibold mb-8">
+				<Briefcase class='size-7'/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
 	</main>
 </Layout>
