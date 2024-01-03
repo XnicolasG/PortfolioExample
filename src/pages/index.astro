@@ -3,24 +3,30 @@ import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import profilePh from "../img/PhotoLknd.jpg";
-import SocialButton from '../components/SocialButton.astro'
-import SectionContainer from '../components/SectionContainer.astro'
-import LinkedIn from '../components/icons/LinkedIn.astro'
-import Github from '../components/icons/Github.astro'
-import Mail from '../components/icons/Mail.astro'
+import SocialButton from "../components/SocialButton.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import LinkedIn from "../components/icons/LinkedIn.astro";
+import Github from "../components/icons/Github.astro";
+import Mail from "../components/icons/Mail.astro";
 import Experience from "../components/Experience.astro";
-import Briefcase from '../components/icons/Briefcase.astro'
+import Briefcase from "../components/icons/Briefcase.astro";
+import Code from '../components/icons/Code.astro'
 ---
 
-<Layout 
-title="Porfolio Nicolas - desarrollador y programador web front-end"
-description="Abierto a contratación para desarrollo web con uso de React y/o Astro"
+<Layout
+	title="Porfolio Nicolas - desarrollador y programador web front-end"
+	description="Abierto a contratación para desarrollo web con uso de React y/o Astro"
 >
-	<main>
+	<main class="px-4">
 		<SectionContainer class="py-44 pb-24">
-			<Image class="rounded-2xl w-16 h-18 mb-6 hover:scale-125 transition" title="Hello World!" src={profilePh} alt="Photo"/> 
+			<Image
+				class="rounded-2xl w-16 h-18 mb-6 hover:scale-125 transition"
+				title="Hello World!"
+				src={profilePh}
+				alt="Photo"
+			/>
 			<h1
-				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-8"
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-8"
 			>
 				Hey, Soy Nicolás <div class="flex items-center">
 					<a
@@ -32,30 +38,44 @@ description="Abierto a contratación para desarrollo web con uso de React y/o As
 					</a>
 				</div>
 			</h1>
-			<h2 class="text-xl opacity-80">
-				<span class="text-yellow-200 font-semibold"> Desarrollador Front-End</span> de Bogotá, Colombia 🌏. <span class="opacity-90"> Especializado
-				en crear paginas web unicas.</span>
+			<h2
+				class="text-xl lg:text-2xl lg:pb-6 text-wrap max-w-[700px] opacity-80"
+			>
+				<span class="text-yellow-200 font-semibold">
+					Desarrollador Front-End</span
+				> de Bogotá, Colombia 🌏. <span class="opacity-90">
+					Especializado en crear paginas web unicas.</span
+				>
 			</h2>
 
-			<nav class="flex gap-x-4 mt-4">
-				<SocialButton href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/">
-					<LinkedIn class="size-6" /> Nicolás García L.
+			<nav class="flex gap-4 mt-4 flex-wrap">
+				<SocialButton
+					href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/"
+				>
+					<LinkedIn class="size-4 md:size-6" /> Nicolás García L.
 				</SocialButton>
 				<SocialButton href="https://github.com/XnicolasG">
-					<Github class="size-6" /> XnicolasG
+					<Github class="size-4 md:size-6" /> XnicolasG
 				</SocialButton>
 				<SocialButton href="mailto:nicolasg.ngl@gmail.com">
-					<Mail  class="size-6"/> nicolasg.ngl@gmail.com
+					<Mail class="size-4 md:size-6" /> nicolasg.ngl@gmail.com
 				</SocialButton>
 			</nav>
 		</SectionContainer>
 
 		<SectionContainer id="experience">
 			<h2 class="flex items-center gap-x-2 text-2xl font-semibold mb-8">
-				<Briefcase class='size-7'/>
+				<Briefcase class="size-7" />
 				Experiencia Laboral
 			</h2>
 			<Experience />
+		</SectionContainer>
+		
+		<SectionContainer id="projects">
+			<h2 class="flex items-center gap-x-2 text-2xl font-semibold mt-16 mb-8">
+				<Code class="size-7 "/>
+				Proyectos Personales
+			</h2>
 		</SectionContainer>
 	</main>
 </Layout>
