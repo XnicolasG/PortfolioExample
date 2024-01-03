@@ -1,0 +1,36 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import profilePh from "../img/PhotoLknd.jpg";
+---
+
+<Layout title="Welcome to Astro.">
+	<main>
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<Image class="rounded-2xl w-16 h-18 mb-6" src={profilePh} alt="Photo"/> 
+			<h1
+				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-8"
+			>
+				Hey, Soy Nicolás <div class="flex items-center">
+					<a
+						href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/"
+						target="_blank"
+						class="flex items-center"
+					>
+						<Badge>Disponible para trabajar</Badge>
+					</a>
+				</div>
+			</h1>
+			<h2 class="text-xl opacity-80">
+				<span class="opacity-90 text-yellow-200/90 font-bold"> Desarrollador Front-End</span> de Bogotá, Colombia 🌏. <span class="opacity-90"> Especializado
+				en crear paginas web unicas.</span>
+			</h2>
+
+			<ul>
+				<li><a href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/">LinkedIn</a></li>
+				<li><a href=""></a></li>
+			</ul>
+		</section>
+	</main>
+</Layout>
