@@ -3,12 +3,19 @@ import Badge from "../components/Badge.astro";
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import profilePh from "../img/PhotoLknd.jpg";
+import SocialButton from '../components/SocialButton.astro'
+import LinkedIn from '../components/icons/LinkedIn.astro'
+import Github from '../components/icons/Github.astro'
+import Mail from '../components/icons/Mail.astro'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout 
+title="Porfolio Nicolas - desarrollador y programador web front-end"
+description="Abierto a contratación para desarrollo web con uso de React y/o Astro"
+>
 	<main>
 		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<Image class="rounded-2xl w-16 h-18 mb-6" src={profilePh} alt="Photo"/> 
+			<Image class="rounded-2xl w-16 h-18 mb-6 hover:scale-125 transition" src={profilePh} alt="Photo"/> 
 			<h1
 				class="text-white text-5xl font-bold flex flex-row gap-x-4 pb-8"
 			>
@@ -23,14 +30,21 @@ import profilePh from "../img/PhotoLknd.jpg";
 				</div>
 			</h1>
 			<h2 class="text-xl opacity-80">
-				<span class="opacity-90 text-yellow-200/90 font-bold"> Desarrollador Front-End</span> de Bogotá, Colombia 🌏. <span class="opacity-90"> Especializado
+				<span class="opacity-90 text-yellow-400 font-bold"> Desarrollador Front-End</span> de Bogotá, Colombia 🌏. <span class="opacity-90"> Especializado
 				en crear paginas web unicas.</span>
 			</h2>
 
-			<ul>
-				<li><a href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/">LinkedIn</a></li>
-				<li><a href=""></a></li>
-			</ul>
+			<nav class="flex gap-x-4 mt-4">
+				<SocialButton href="https://www.linkedin.com/in/nicol%C3%A1s-garc%C3%ADa-l%C3%B3pez-/">
+					<LinkedIn class="size-6" /> Nicolás García L.
+				</SocialButton>
+				<SocialButton href="https://github.com/XnicolasG">
+					<Github class="size-6" /> XnicolasG
+				</SocialButton>
+				<SocialButton href="mailto:nicolasg.ngl@gmail.com">
+					<Mail  class="size-6"/> nicolasg.ngl@gmail.com
+				</SocialButton>
+			</nav>
 		</section>
 	</main>
 </Layout>
