@@ -1,7 +1,82 @@
 ---
+import JavaScript from "./icons/JavaScript.astro";
+import React from "./icons/React.astro";
+import Redux from "./icons/Redux.astro";
+import Firebase from "./icons/Firebase.astro";
+const TAGS = {
+    React: {
+        name: "React",
+        class: "bg-grey-800 text-sky-600",
+        icon: React,
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-yellow-500 text-back",
+        icon: JavaScript,
+    },
+    Redux: {
+        name: "Redux",
+        class: "text-purple-700 bg-white",
+        icon: Redux,
+    },
+    Firebase: {
+        name: "Firebase",
+        class: "bg-white text-black",
+        icon: Firebase,
+    },
+};
 const PROYECTS = [
     {
+        title: "Magic Shape",
+        description:
+            "App web de fitness, diseñada para realizar sesiones de entrenamiento, relajacion, tener ideas de comida saludable, llevar un control de calorias y mi estado de salud.",
+        link: "https://demo-day-projects-magicshape-qfuol5bzc-garcias-team.vercel.app/login/singin",
+        github: "https://github.com/academia-geek/demo-day-projects-magicshape",
+        image: "/proyects/MS_so2.webp",
+        tags: [TAGS.React, TAGS.JavaScript, TAGS.Redux, TAGS.Firebase],
+    },
+    {
+        title: "To Do",
+        description: "App web para llevar control de tareas en el día",
+        link: "",
+        github: "https://github.com/XnicolasG/App_ToDo",
+        image: "",
+        tags: [TAGS.React, TAGS.JavaScript],
+    },
+    {
+        title: "Game Js",
+        description: "Videojuego realizado con canvas en JavaScript",
+        link: "https://videogame-js.vercel.app/",
+        github: "https://github.com/XnicolasG/Videogame-Js",
+        image: "/proyects/VideoGameJS.webp",
+        tags: [TAGS.JavaScript],
+    },
+];
+---
 
-    }
-]
---- 
+{
+    PROYECTS.map(({ image, title, description, tags, github }) => (
+        <article class="mb-6">
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-pretty text-lg mb-4">{description}</p>
+            <ul class="flex gap-x-2 mb-2" >
+                {tags.map((tag) => (
+                    <li>
+                        <span
+                            class={`flex gap-x-2 mb-2 cursor-default rounded-full text-sm font-semibold px-2 py-1 items-center ${tag.class}`}
+                            title={tag.name}
+                        >
+                            <tag.icon class="size-4" />
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/20 w-90 hover:scale-105 transition"
+                src={image}
+                alt={`Imagen de proyecto ${title}`}
+            />
+        </article>
+    ))
+}
